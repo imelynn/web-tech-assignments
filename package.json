@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "prettier": "^2.7.1",
+    "vite": "^3.1.0"
+  },
+  "name": "workflows",
+  "version": "1.0.0",
+  "description": "Codebase to compile all phase 3 assignments and deploy them to the web.",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "prettier -c .",
+    "fix": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "get remote -v https://github.com/imelynn/web-tech-assignments.git://"
+  },
+  "author": "E. Lynn",
+  "license": "ISC"
+}

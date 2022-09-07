@@ -1,1 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>BlockBuster 2D Game</title>
+    <style>
+      * { padding: 0; margin: 0; }
+      canvas {background: rgb(158, 13, 134); display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
 
+<!--CANVAS ELEMENT SETUP USED TO RENDER OBJECTS, GRAPHICS, ANIMATIONS-->
+<canvas id="myCanvas" width="480" height="320"></canvas>
+
+<!--SCRIPT (JAVASCRIPT) HOLD THE PROGRAM CODE - ALL JS CODE GO BELOW HERE-->
+<script>
+
+//DEFINING CANVAS AND ALLOW RENDERING OF GRAPHICS ON CANVAS
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+//GIVING THE BALL COLLISION DETECTION
+var ballRadius = 10;
+//GIVING THE BALL SLIGHT MOVEMENT
+var x = canvas.width/2;
+var y = canvas.height-30;
+var dx = 2;
+var dy = -2;
+//BUILDING THE PADDLE
+var paddleHeight = 10;
+var paddleWidth = 75;
+var paddleX = (canvas.width-paddleWidth)/2;
+//GIVING THE USER PADDLE CONTROL
+var rightPressed = false;
+var leftPressed = false;
+//CREATING THE BRICK FIELD
+var brickRowCount = 3;
+var brickColumnCount = 5;
+var brickWidth = 75;
+var brickHeight = 20;
+var brickPadding = 10;
+var brickOffsetTop = 30;
+var brickOffsetLeft = 30;
+//KEEPING TRACK OF THE SCORE
+var score = 0;
+//GIVING THE PLAYER LIVES
+var lives = 3;
+//IMPLEMENTING CANVAS BACKGROUND 
+
+
+
+//BRICK ARRAY CONTAINS COLUMN AND ROWS, OBJECT CONTAINING X,Y COORDINATES, STATUS REMOVES BLOCK AFTER IT IS HIT AND UPDATES THE BRICK STATUS PROPERTY  
+var bricks = [];
+for(var c=0; c<brickColumnCount; c++) {
+    bricks[c] = [];
+    for(var r=0; r<brickRowCount; r++) {
+        bricks[c][r] = { x: 0, y: 0, status: 1 };
+    }
+}
+
+//LISTENS FOR CONTROL KEYS TO BE PRESSED AND EXECUTES THE ATTACHED FUNCTIONS
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
+document.addEventListener("mousemove", mouseMoveHandler, false);
+//EVENTLISTENER FUNCTIONS
+function mouseMoveHandler(e) {
+    var relativeX = e.clientX - canvas.offsetLeft;
+    if(relativeX > 0 && relativeX < canvas.width) {
+        paddleX = relativeX - paddleWidth/2;
+    }
+}
+function keyDownHandler(e) {
+    if(e.key == "Right" || e.key == "ArrowRight") {
+        rightPressed = true;
+    }
+    else if(e.key == "Left" || e.key == "ArrowLeft") {
+        leftPressed = true;
+    }
+}
+function keyUpHandler(e) {
+    if(e.key == "Right" || e.key == "ArrowRight") {
+        rightPressed = false;
+    }
+    else if(e.key == "Left" || e.key == "ArrowLeft") {
+        leftPressed = false;
+    }
+}
+//COLLISION DETECTION FUNCTION BETWEEN THE PADDLE AND THE BRICKS, SETS BRICK STATUS TO 0 AFTER COLLISION, INCREMENTS SCORE ON COLLISION DETECTION
+function collisionDetection() {
+    for(var c=0; c<brickColumnCount; c++) {
+        for(var r=0; r<brickRowCount; r++) {
+            var b = bricks[c][r];
+            if(b.status == 1) {
+                if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+                    dy = -dy;
+                    b.status = 0;
+                    score++;
+                    if(score == brickRowCount*brickColumnCount) {
+                        alert("YOU WIN, CONGRATULATIONS!");
+                        document.location.reload();
+                        clearInterval(interval); // Needed for Chrome to end game
+                    }
+                }
+            }
+        }
+    }
+}
+//CREATE AND UPDATE SCORE DISPLAY
+function drawScore() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText("Score: "+score, 8, 20);
+}
+//GIVE PLAYER LIVES AND UPDATE #OF LIVES AFTER EACH PLAY
+function drawLives() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText("Lives: "+lives, canvas.width-65, 20);
+}
+//DRAWS A BALL ON THE CANVAS
+function drawBall() {
+    ctx.beginPath();
+    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
+}
+//DRAWS A PADDLE ON THE CANVAS AND DEFINES ITS STARTING POSITION
+function drawPaddle() {
+    ctx.beginPath();
+//CLEARRECT() CLEARS THE CANVAS OF PREVIOUSLY DRAWN OBJECTS IT TAKES 4 PARAMETER X & Y COORDINATES OF TOP LEFT, X & Y OF BOTTOM RIGHT
+    ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
+}
+//BRICK DRAWING AND PLACEMENT ON THE CANVAS STATUS PROPERTY DETERMINES IF BRICK WILL BE DRAWN
+function drawBricks() {
+    for(var c=0; c<brickColumnCount; c++) {
+        for(var r=0; r<brickRowCount; r++) {
+            if(bricks[c][r].status == 1) {
+                var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
+                var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
+                bricks[c][r].x = brickX;
+                bricks[c][r].y = brickY;
+                ctx.beginPath();
+                ctx.rect(brickX, brickY, brickWidth, brickHeight);
+                ctx.fillStyle = "#0095DD";
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+    }
+}
+//CONTINOUSLY UPDATES THE CANVAS DRAWING WITH NEW VARIABLES
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+//COMMAND TO CALL THE FUNCTIONS
+    drawBricks();
+    drawBall();
+    drawPaddle();
+    drawScore();
+    drawLives();
+    collisionDetection();
+//BOUNCES THE BALL OFF THE WALLS TOP/BOTTOM ADDING -BALLRADIOUS REDIRECT AS SOON AS BALL TOUCHES WALL     
+    if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+        dx = -dx;
+    }
+//BOUNCES THE BALL OFF THE WALLS LEFT/RIGHT -BALLRADIOUS REDIRECT AS SOON AS BALL TOUCHES WALL, ALLOWS TOUCHING PADDLE, QUITS IF TOUCHES BOTTOM WALL 
+    if(y + dy < ballRadius) {
+    dy = -dy;
+    } else if(y + dy > canvas.height-ballRadius) {
+    if(x > paddleX && x < paddleX + paddleWidth) {
+        dy = -dy;
+    }
+//DECREMENTS PLAYER LIVES, RESET BALL AND PADDLE LOCATION ON START NEW LIFE
+    else {
+        lives--;
+    if(!lives) {
+    alert("GAME OVER");
+    document.location.reload();
+    clearInterval(interval); // Needed for Chrome to end game
+    }
+    else {
+    x = canvas.width/2;
+    y = canvas.height-30;
+    dx = 2;
+    dy = -2;
+    paddleX = (canvas.width-paddleWidth)/2;
+    }
+    }
+    }
+//DEFINES THE MOVEMENT OF THE PADDLE ON THE SCREEN   
+    if(rightPressed) {
+        paddleX += 7;
+        if (paddleX + paddleWidth > canvas.width){
+            paddleX = canvas.width - paddleWidth;
+        }
+    }
+    else if(leftPressed) {
+        paddleX -= 7;
+        if (paddleX < 0){
+            paddleX = 0;
+        }
+    }
+    
+    x += dx;
+    y += dy;
+}
+//CREATES A LOOP TO CONTINUOUSLY UPDATE THE CANVAS TO NEW VARIABLES, CODE
+var interval = setInterval(draw, 10);
+
+</script>
+<!--ALL JS CODE GO ABOVE HERE-->
+
+</body>
+</html>
+index.html
+Displaying index.html.

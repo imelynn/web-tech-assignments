@@ -1,0 +1,27 @@
+{
+    "name": "Feminine Energy in Tech Always",
+    "short_name": "FETA",
+    "description": "App to track female web developers and their contributions to tech",
+    "starturl": "www.imelynn.com",
+    "themecolor": "purple",
+    "backgroundcolor": "lavender",
+    "orientation": "portrait",
+    "display": "unknown",
+ "icons": [
+    {
+       "src": "images/feta_circle.png",
+       "type": "image/png",
+       "sizes": "512x512"
+    },
+    {
+       "src": "images/feta_lady.png",
+       "type": "image/png",
+       "sizes": "512x512"
+    },
+    {
+        "src": "images/feta_square.png",
+        "type": "image/png",
+        "sizes": "512x512"
+     }
+ ]
+}

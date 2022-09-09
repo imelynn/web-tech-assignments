@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>"Getting Started with HTML"</title>
+      <meta charset="UTF-8">
+ 			<meta name="description" content="Technical Document">
+ 			<meta name="keywords" content="HTML, CSS, JavaScript,                                            Technical, Document">
+  		<meta name="author" content="Gena Hurst">
+  		<meta name="viewport" content="width=device-width, initial-                                      scale=1.0">
+    <link rel="Stylesheet" href="./style-td.css">
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>HTML Getting Started</header>
+     <ul>
+       <li>
+       <a class="nav-link" href="#File Structure">File Structure</a>
+       </li>
+       <li>
+       <a class="nav-link" href="#Code Template">Code Template</a>
+       </li>
+       <li>
+       <a class="nav-link" href="#Must Have Tags">Must Have Tags</a>
+       </li>
+       <li>
+       <a class="nav-link" href="#Hierarchy">Hierarchy</a>
+       </li>
+       <li>
+       <a class="nav-link" href="#Closing">Closing</a>
+       </li>
+      <li>
+        <a class="nav-link" href="#Sources">Document Sources</a>
+        </li>
+       </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="File Structure">
+      <header>File Structure</header>
+      <article>
+        <p>File structure is important and critical to an html document functioning properly within the browser.  If the filing of the html document itself, in addition to stylesheets, images, and javascripts are not correct, the browser will not read it correctly.   Elements can appear all over the place, out of context, unordered, or missing entirely from the user’s viewport once rendered by the user agent (browser). 
+<br><br> 
+The user agent must know the file path in order to locate and access files associated with the html document.  A file path describes the location of a file in a web site's folder structure.
+<br><br>
+File paths are used when linking to external files like:
+<br> <ul>       
+<li>Web pages</li>
+<li>Images</li>
+        <li>Stylesheet</li> <li>JavaScripts</li></ul>
+Best practice is to keep all files associated with the webpage including the html file, local document linkages, images, and stylesheets in the same folder.  
+<br><br>
+Images can be tricky to access depending on how they are linked form the source document.  Outside of URL linked images, its easier and best practice to just keep all images in the webpage root folder.  Decide whether images will have their own folder of reside in the same folder as the html document in the root folder.  
+<br><br>
+Depending on your decision the file path is slightly different for each option, some examples are provided:"</p>
+</article>
+</section>
+<img src="image_descriptor.png" alt="Image Link Options ">
+<br><br>
+<section class="main-section" id="Code Template">
+<header>Code Template</header>
+<article>
+                                                 <p>Every program must include !DOCTYPE tag, it is NOT CASE SENSITIVE.
+<br><br>
+                                                 !DOCTYPE  is not a tag it is a set of instructions called declarations that are provided to the browser.  Having a declaration document attached ensures that it appears the same in different browsers.  The declaration document is called document type definition or DTD.
+                                                 <br><br>
+Legacy HTML Versions (before HTML Version 5) required a URI link to the actual DTD.   Declaring it in the html document looks as such:
+<br><br>
+!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"
+
+ <br>
+                                                                                                    <ul>
+                                                                                                    <li>
+                                                                                                     The DTD is a compilation of all the entity sets used in that version of HTML.</li>    <li>Entity sets are a collections of entities that share the same attributes.<br>
+                                                                                                    </ul>
+                                                                                                    <h4>Example:</h4>
+                                                                                                    In HTML,  a character is an entity type: less than (), greater than (>), and ampersand (&),  are all entities that share the same character attributes. Together they represent an entity set.  Every entity has an entity type, name, and number.  Refer to list below: </p>
+ <img img src="entity_example.jpg" alt="HTML Entity Examples" >    
+<p>HTML Version 4.01 has three DTDs and three entity set collections and an URI should be provided in the !DOCTYPE tag to access them:
+<ul>
+  <li>"strict.dtd" -- default strict DTD</li>
+  <li>"loose.dtd" -- loose DTD</li>
+  <li>"frameset.dtd" -- DTD for frameset documents</li>
+  <li>"HTMLlat1.ent" -- Latin-1 entities</li>
+<li>"HTMLsymbol.ent" -- Symbol entities</li>
+  <li>"HTMLspecial.ent" -- Special entities</li></ul></p>      
+  <p>In newer versions of HTML, like html 5 the !DOCTYPE declaration does not require an URI only: DOCTYPE html      
+    </article>
+  </section>
+<section class="main-section" id="Must Have Tags">
+      <header>Must Have Tags, Well Somewhat</header>
+      <article>
+        <p>Precursor to the information in this section:<br><br>
+
+          'html' and 'body' tags are not required in HTML 5, the document will still run fine in browsers like Chrome and Firefox but may break in others.  **However, not using the tags comes with conditions that must be implemented in order to get the program to run efficiently**.  
+<br><br>
+One such condition:<br><br>
+e.g. The html start tag is optional if the first thing inside the html element is a comment, otherwise browser may not render document properly.
+<br><br>
+So the choices are:
+          <ul>
+            <li>Not use the tags but learn the necessary conditions because you’re just that bored with lots of time on your hand. <li>Stick to what you know, use the tags, and live a simple life.  There is beauty and profound peace in simplicity.   
+            <br> </ul>
+Some of the primary tags for an html document are:<br>
+<ul>       
+<li>html</li>
+<li>head</li>
+<li>title</li>
+<li>link</li>
+ <li>style</li>
+<li>meta</li>
+        </ul>
+
+        What to know about the primary tags:
+        
+        <h2 style="color:#00FF00;">HTML</h2>
+<ul>
+  <li>After the document type declarations (DTDs), the rest of the program is contained in the HTML tag.</li>  
+  <li>Start and End tags are optional.</li>
+        </ul>
+        <h2 style="color:#e4b8ec;">HEAD</h2>
+        <ul> 
+  <li>Start and End tags are optional.</li> 
+          <li>The head element contains information about the current document, such as its title, keywords that may be useful to search engines, and other data that is not considered 			website content like links, metadata, and style sheets.</li>
+           <li>Elements that appear in the head 			are not generally compiled as website content. The browser may, however, make 			information in the head available to users through other mechanisms.</li></ul>
+        <h2 style="color:#89CFF0;">TITLE</h2>
+           <ul><li>Start tag: required, End tag: required</li>
+           <li>Every HTML document must have a title element in the section, all other elements are optional.</li>
+           <li>Authors should use the TITLE element to identify the contents of a document.</li>
+             <li>Since users often consult documents out of context, authors should provide context-rich titles.  Thus, instead of a title such as "Welcome", which doesn't provide much contextual background, authors should supply a title such as 				"The Healing Heart Sanctuary," instead.</li>
+             <li>There are two uses of title, one is global (element, only appears once in the header) and the other is local (attribute, appears in any number of elements, mostly as a descriptor).</li> </ul>
+        <h4>Example:</h4>
+
+			A href="Intuitive Lifestyle Brand | Home" <span style="background-color: #f17373">title</span>="Businesses with an intuitive foundation for doing business.">
+         
+<br><br>Some other optional elements included in the head tag:
+
+        <h2 style="color:#89CFF0;">LINK</h2>
+        <ul>
+        <li>Start tag: required, End tag: optional</li>
+         <li>Link element indicates a relationship between the document and some other object, such as link to style sheet.</li>
+        </ul>
+        <h4>Example:</h4>
+        link rel="stylesheet" href="styles.css"
+       
+        <h2 style="color:#89CFF0;">STYLE</h2>
+        <ul>
+          <li>Start tag: required, End tag: required.</li>
+          <li>Provides styling elements directly in the code.</li></ul>
+<h4>Example:</h4>
+			body {background-color: powderblue;}<br>
+			h1   {color: blue;}<br>
+			p    {color: red;}
+			 
+        <h2 style="color:#89CFF0;">META</h2>
+       <ul>
+          
+          <li>Start tag: optional, End tag: optional</li>
+         <li>Metadata is data (information) about the document such as character set, page description, keywords, and author of the document. and viewport settings.</li>
+         <li>Metadata will not be displayed on the page, but will be parsed by agents such as the browser (how to display content or reload page), search engines (keywords), and other web services.</li>
+         <li>Viewport is a very important function, designers take control over the viewport (the user's visible area of a web page), through the meta tag.</li>
+         <li>Hypertext Transfer Protocol (HTTP) is also managed in the meta tag.</li></ul>
+        <h4>Examples:</h4>
+
+	meta charset="UTF-8"<br>
+  meta name="description" content="Getting Started with HTML"<br>
+  meta name="keywords" content="HTML, CSS, JavaScript, DTD, Technical Document"<br>
+  meta name="author" content="Gena Hurst"<br>
+  meta name="viewport" content="width=device-width, initial-scale=1.0"<br><br>
+			
+There are many uses for the meta tag that goes beyond the scope of this document, please refer to the sources below for additional information.
+        <h2 style="color:#e4b8ec;">BODY</h2>
+<ul>
+  <li>Start tag: optional, End tag: optional</li>
+  <li>'frameset' is the legacy version of 'body'.</li>
+  <li>The body of a document contains the website content. The content may be presented by a user agent (browser) in a variety of ways: 
+		<br>1.  For visual browsers, you can think of the body as a canvas where the content appears: text, images, colors, graphics, etc.<br> 
+		2. For audio user agents, the same content may be spoken. 	</li>
+  <li>Since style sheets are now the preferred way to specify a document's presentation, the representational attributes of the body have been deprecated (archived).</li>
+  <li>All visual content that will appear on the webpage is contained in the body tags.</li></ul>
+		
+There are just too many elements and attributes to list them all here.  Some of the ones we’ve covered in the Google Web Tech Development Fellowship include but are not limited to:
+        <ul>
+          <li>hypertext (a)</li>
+         <li>header(h)</li>
+          <li>division (div)</li>
+          <li>paragraph (p)</li>
+          <li>ordered list (ol)</li>
+          <li>unordered list (ul)</li>
+          <li>list (li)</li>
+          <li>break (br)</li>
+          <li>image (img)</li></ul>
+    
+</article>
+</section>
+<section class="main-section" id="Hierarchy">                                                                                                                       <section class="main-section" id="File Structure">
+      <header>Hierarchy</header>
+      <article>
+        <p>An HTML document is like a big family tree, with parents, siblings, children, ancestors, and descendants.
+
+It comes from the ability to nest HTML elements within one another.</p> 
+<ul>
+<li>Ancestor – Represented by the <span style="background-color: #00FF00">HTML</span> tag.
+      An ancestor refers to any element that is connected but further up the document tree - no matter how many levels higher.</li></ul>
+      <img src="tree_ancestor.gif" alt="Tree Ancestor ">
+                                                     <ul><li>Descendant – Represented by the <span style="background-color: #e4b8ec">HEAD/BODY</span> tag as a descendant of <span style="background-color: #00FF00">HTML</span>.<br>
+      A descendant refers to any element that is connected but lower down the document tree - no matter how many levels lower.</li></ul>
+      </ul>
+      <img src="tree_descendant.gif" alt="Tree Descendant">
+<ul><li>Parent/Child – Represented by <span style="background-color: #e4b8ec">HEAD</span> (Parent) and  <span style="background-color: #89CFF0">TITLE</span> (Child) tags.<br>A parent is an element that is directly above and connected to an element in the document tree.<br>
+      A child is an element that is directly below and connected to an element in the document tree. </li></ul>
+      <img src="tree_parent.gif" alt="Tree Parent and Child">
+                                                                                                                                           <ul><li>Siblings – Represented by the <span style="background-color: #89CFF0">TITLE</span>, <span style="background-color: #89CFF0">LINK</span>, <span style="background-color: #89CFF0">STYLE</span>, and <span style="background-color: #89CFF0">META</span> tags.<br>
+     A sibling is an element that shares the same parent with another element.</li> </ul>
+     <img src="tree_siblings.gif" alt="Tree Parent and Child"> 
+</article>
+</section>
+  <section class="main-section" id="Closing">
+      <header>Closing</header>
+      <article>
+      <p>HTML documents all close with the ending HTML tag."
+
+        <section class="main-section" id="Sources">
+            <article> 
+                <h5><p><u>Sources:</u><br>
+            The global structure of an HTML document (w3.org)<br> 
+            
+            HTML's two most important components: Tags & Hierarchy: All about them - HT School (hindustantimes.com)<br> 
+            
+            HTML Entities (w3schools.com) <br>
+            
+            HTML 4 Document Type Definition (w3.org) <br> 
+            
+            HTML doctype declaration (w3schools.com)<br> 
+            
+            The Head Element and Related Elements (w3.org) <br>
+            
+            HTML elements reference - HTML: HyperText Markup Language | MDN (mozilla.org)<br> 
+            
+            The HTML Document Tree (simmons.edu)<br> 
+            
+            The HTML family tree: Parents, children, ancestor, descendant, siblings (linkedin.com) <br>
+            
+            HTML File Paths (w3schools.com) <br>
+            
+            HTML Hierarchy - Free tutorial to learn HTML and CSS (marksheet.io) </p></h5>
+            </article>
+        </section>
+  </body>
+  </html>

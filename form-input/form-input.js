@@ -16,11 +16,10 @@ let agreement = document.querySelector('#agreement')
   display_date.innerText = date.value;
   display_country.innerText = country.value;
   display_comment.innerText = comment.value;
-  display_comment.innerText = displayRadioValue;
   
   }
   
-/*Display radio button option
+//Display radio button option
 function displayRadioValue() {
   var ele = document.getElementsByName('timezone');
     
@@ -29,5 +28,5 @@ function displayRadioValue() {
       document.getElementById("radtime").innerHTML
               = ele[i].value;
   }
-}*/
+}
 

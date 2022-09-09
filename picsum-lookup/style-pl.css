@@ -1,0 +1,47 @@
+.hide {
+    display: none;
+  }
+  
+  body {
+    
+    flex-wrap: wrap;
+    justify-content: left;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    background-color: #CF9FFF;
+  }
+  
+  .main {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  h1 {
+    width: 100%;
+    text-align: center;
+    font-family: "Montserrat";
+  }
+  
+  img {
+    max-width: 250px;
+    height: 250px;
+  }
+  
+  button {
+    background-color: black;
+    max-width: 175px;
+    max-height: 30px;
+    border-radius: 10px;
+    color: #CF9FFF;
+   
+  }
+  
+  figure {
+    max-width: 200px;
+    margin: 0 auto;
+  }

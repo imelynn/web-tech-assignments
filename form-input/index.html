@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style-fi.css">
+    <title>My Form Template</title>
+  </head>
+</head>
+<body>
+    <form id="myform" action="#">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="" required><br><br>
+        <!--Email Required-->
+        <label for="email">*Email:</label>
+        <input type="email" id="email" name="email" value="" required><br><br>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" value=""><br><br>
+        <label for="date">Country:</label>
+        <select type="select" id="country" name="country">  
+        <option value = "USA"> USA</option>  
+        <option value = "UK"> UK </option>  
+        <option value = "China"> China </option>  
+        <option value = "Greece"> Greece </option>  
+        </select><br><br>
+        <!--Radio Button Timezone-->
+        <label for="radiobtn" id="timezone" name="timezone">Timezone:</label>
+        <input type="radio" id="est" name="timezone" value="EST">
+        <label for="est">EST<span class="radiobtn"></span></label>
+        <input type="radio" id="cst" name="timezone" value="CST">
+        <label for="cst">CST <span class="radiobtn"></span></label>
+        <input type="radio" id="pst" name="timezone" value="PST">
+        <label for="pst">PST <span class="radiobtn"></span></label><br><br>
+        <!--Large Area Text // Required-->
+        <label for="comment">*Enter Comment</label><br>
+        <textarea type="text" id="comment" name="comment" value="" cols="50" rows="4" required></textarea>
+         <!--Agreement Checkbox Required-->
+        <imput type="checkbox" for="agreement" id=agreement name="agreement"><br>*I agree to this form submission:</label><br><br>
+        <label id="checkbox1" class="checkbox">Yes<input type="checkbox" required></label>
+        </div>
+        <h5>*Fields required.</h5>
+        <div id="timezone" onclick="displayRadioValue()">
+        <button>Submit</button><br><br>
+      </div>
+        </form>
+        
+        <div id="output">
+        <p><span id="display_agreement"></p></span>
+        <p><span id="display_name"></p></span>
+        <p><span id="display_email"></p></span>
+        <p><span id="display_date"></p></span>
+        <p><span id="display_country"></p></span>
+        <p><span id="display_timezone"></p></span>
+        <!--Display radio button option container-->
+        <p id="radtime"></p>
+        <p><span id="display_comment"></p></span>
+        </div>
+        
+ <script src="login_form.js"></script>
+</body>
+</html>

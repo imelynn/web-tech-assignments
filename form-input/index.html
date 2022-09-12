@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>My Form Template</title>
-    <script type="module" crossorigin src="/assets/form-input/index.fee90bd8.js"></script>
+    <script type="module" crossorigin src="/assets/form-input/index.0c1ba9e7.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill.c7c6310f.js">
-    <link rel="stylesheet" href="/assets/index.ba73fd66.css">
+    <link rel="stylesheet" href="/assets/index.6d7cf0d6.css">
   </head>
 <body>
+  <p id="header">Simple Form w/ Display</p>
+  <div id="maincontainer">
+  <div id="formdata">
     <form id="myform" action="#">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="" required><br><br>
@@ -39,11 +42,11 @@
          <!--Agreement Checkbox Required-->
         <imput type="checkbox" for="agreement" id=agreement name="agreement"><br>*I agree to this form submission:</label><br><br>
         <label id="checkbox1" class="checkbox">Yes<input type="checkbox" required></label>
-        </div>
         <h5>*Fields required.</h5>
         <div id="timezone" onclick="displayRadioValue()">
         <button>Submit</button><br><br>
       </div>
+        </div>
         </form>
         
         <div id="output">
@@ -57,7 +60,7 @@
         <p id="radtime"></p>
         <p><span id="display_comment"></p></span>
         </div>
-        
+      </div>
  
 </body>
 </html>

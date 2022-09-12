@@ -3,10 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/form-input/style-fi.css">
+    <link rel="stylesheet" href="style.css">
     <title>My Form Template</title>
   </head>
 <body>
+  <p id="header">Simple Form w/ Display</p>
+  <div id="maincontainer">
+  <div id="formdata">
     <form id="myform" action="#">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="" required><br><br>
@@ -36,11 +39,11 @@
          <!--Agreement Checkbox Required-->
         <imput type="checkbox" for="agreement" id=agreement name="agreement"><br>*I agree to this form submission:</label><br><br>
         <label id="checkbox1" class="checkbox">Yes<input type="checkbox" required></label>
-        </div>
         <h5>*Fields required.</h5>
         <div id="timezone" onclick="displayRadioValue()">
         <button>Submit</button><br><br>
       </div>
+        </div>
         </form>
         
         <div id="output">
@@ -54,7 +57,7 @@
         <p id="radtime"></p>
         <p><span id="display_comment"></p></span>
         </div>
-        
+      </div>
  <script type="module" src="./form-input.js"></script>
 </body>
 </html>

@@ -1,0 +1,34 @@
+body {
+    background-color: #CF9FFF;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0;
+    clear:both;
+}
+#formdata{
+    
+    background-color: #CF9FFF;
+    width: 50%;
+    margin-left: 2%;
+}
+#output{
+    height:fit-content;
+    margin-right: 5%;
+    background-color: blueviolet;
+    width: 50%;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 20px;
+    border: 4px solid #339988;
+    text-align: center;
+   
+
+    }
+#maincontainer{
+    display:flex;
+    padding-top: 3%;
+}
+#header{
+    margin-left: 400px;
+    font-size: 40px;
+}

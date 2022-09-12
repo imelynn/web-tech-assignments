@@ -1,6 +1,3 @@
-.hide {
-    display: none;
-  }
   
   body {
     
@@ -44,4 +41,15 @@
   figure {
     max-width: 200px;
     margin: 0 auto;
+  }
+  #heading{
+    font-size: 50px;
+    color: aliceblue;
+  }
+  #heading2{
+    font-size: 13px;
+  }
+  #heading3{
+    color: aliceblue;
+    font-size: 20px;
   }

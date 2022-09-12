@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>"Getting Started with HTML"</title>
+      <meta charset="UTF-8">
+ 			<meta name="description" content="Technical Document">
+ 			<meta name="keywords" content="HTML, CSS, JavaScript,                                            Technical, Document">
+  		<meta name="author" content="Gena Hurst">
+  		<meta name="viewport" content="width=device-width, initial-                                      scale=1.0">
+    
+    <link rel="stylesheet" href="/assets/index.e99b2035.css">
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>HTML Getting Started</header>
+     <ul>
+       <li>
+       <a class="nav-link" href="#File Structure">File Structure</a>
+       </li>
+       <li>
+       <a class="nav-link" href="#Code Template">Code Template</a>
+       </li>
+       <li>
+       <a class="nav-link" href="#Must Have Tags">Must Have Tags</a>
+       </li>
+       <li>
+       <a class="nav-link" href="#Hierarchy">Hierarchy</a>
+       </li>
+       <li>
+       <a class="nav-link" href="#Closing">Closing</a>
+       </li>
+      <li>
+        <a class="nav-link" href="#Sources">Document Sources</a>
+        </li>
+       </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="File Structure">
+      <header>File Structure</header>
+      <article>
+        <p>File structure is important and critical to an html document functioning properly within the browser.  If the filing of the html document itself, in addition to stylesheets, images, and javascripts are not correct, the browser will not read it correctly.   Elements can appear all over the place, out of context, unordered, or missing entirely from the user’s viewport once rendered by the user agent (browser). 
+<br><br> 
+The user agent must know the file path in order to locate and access files associated with the html document.  A file path describes the location of a file in a web site's folder structure.
+<br><br>
+File paths are used when linking to external files like:
+<br> <ul>       
+<li>Web pages</li>
+<li>Images</li>
+        <li>Stylesheet</li> <li>JavaScripts</li></ul>
+Best practice is to keep all files associated with the webpage including the html file, local document linkages, images, and stylesheets in the same folder.  
+<br><br>
+Images can be tricky to access depending on how they are linked form the source document.  Outside of URL linked images, its easier and best practice to just keep all images in the webpage root folder.  Decide whether images will have their own folder of reside in the same folder as the html document in the root folder.  
+<br><br>
+Depending on your decision the file path is slightly different for each option, some examples are provided:"</p>
+</article>
+</section>
+<img src="/assets/image_descriptor.2871047e.png" alt="Image Link Options ">
+<br><br>
+<section class="main-section" id="Code Template">
+<header>Code Template</header>
+<article>
+                                                 <p>Every program must include !DOCTYPE tag, it is NOT CASE SENSITIVE.
+<br><br>
+                                                 !DOCTYPE  is not a tag it is a set of instructions called declarations that are provided to the browser.  Having a declaration document attached ensures that it appears the same in different browsers.  The declaration document is called document type definition or DTD.
+                                                 <br><br>
+Legacy HTML Versions (before HTML Version 5) required a URI link to the actual DTD.   Declaring it in the html document looks as such:
+<br><br>
+!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"
+
+ <br>
+                                                                                                    <ul>
+                                                                                                    <li>
+                                                                                                     The DTD is a compilation of all the entity sets used in that version of HTML.</li>    <li>Entity sets are a collections of entities that share the same attributes.<br>
+                                                                                                    </ul>
+                                                                                                    <h4>Example:</h4>
+                                                                                                    In HTML,  a character is an entity type: less than (), greater than (>), and ampersand (&),  are all entities that share the same character attributes. Together they represent an entity set.  Every entity has an entity type, name, and number.  Refer to list below: </p>
+ <img img src="/assets/entity_example.01afdf48.jpg" alt="HTML Entity Examples" >    
+<p>HTML Version 4.01 has three DTDs and three entity set collections and an URI should be provided in the !DOCTYPE tag to access them:
+<ul>
+  <li>"strict.dtd" -- default strict DTD</li>
+  <li>"loose.dtd" -- loose DTD</li>
+  <li>"frameset.dtd" -- DTD for frameset documents</li>
+  <li>"HTMLlat1.ent" -- Latin-1 entities</li>
+<li>"HTMLsymbol.ent" -- Symbol entities</li>
+  <li>"HTMLspecial.ent" -- Special entities</li></ul></p>      
+  <p>In newer versions of HTML, like html 5 the !DOCTYPE declaration does not require an URI only: DOCTYPE html      
+    </article>
+  </section>
+<section class="main-section" id="Must Have Tags">
+      <header>Must Have Tags, Well Somewhat</header>
+      <article>
+        <p>Precursor to the information in this section:<br><br>
+
+          'html' and 'body' tags are not required in HTML 5, the document will still run fine in browsers like Chrome and Firefox but may break in others.  **However, not using the tags comes with conditions that must be implemented in order to get the program to run efficiently**.  
+<br><br>
+One such condition:<br><br>
+e.g. The html start tag is optional if the first thing inside the html element is a comment, otherwise browser may not render document properly.
+<br><br>
+So the choices are:
+          <ul>
+            <li>Not use the tags but learn the necessary conditions because you’re just that bored with lots of time on your hand. <li>Stick to what you know, use the tags, and live a simple life.  There is beauty and profound peace in simplicity.   
+            <br> </ul>
+Some of the primary tags for an html document are:<br>
+<ul>       
+<li>html</li>
+<li>head</li>
+<li>title</li>
+<li>link</li>
+ <li>style</li>
+<li>meta</li>
+        </ul>
+
+        What to know about the primary tags:
+        
+        <h2 style="color:#00FF00;">HTML</h2>
+<ul>
+  <li>After the document type declarations (DTDs), the rest of the program is contained in the HTML tag.</li>  
+  <li>Start and End tags are optional.</li>
+        </ul>
+        <h2 style="color:#e4b8ec;">HEAD</h2>
+        <ul> 
+  <li>Start and End tags are optional.</li> 
+          <li>The head element contains information about the current document, such as its title, keywords that may be useful to search engines, and other data that is not considered 			website content like links, metadata, and style sheets.</li>
+           <li>Elements that appear in the head 			are not generally compiled as website content. The browser may, however, make 			information in the head available to users through other mechanisms.</li></ul>
+        <h2 style="color:#89CFF0;">TITLE</h2>
+           <ul><li>Start tag: required, End tag: required</li>
+           <li>Every HTML document must have a title element in the section, all other elements are optional.</li>
+           <li>Authors should use the TITLE element to identify the contents of a document.</li>
+             <li>Since users often consult documents out of context, authors should provide context-rich titles.  Thus, instead of a title such as "Welcome", which doesn't provide much contextual background, authors should supply a title such as 				"The Healing Heart Sanctuary," instead.</li>
+             <li>There are two uses of title, one is global (element, only appears once in the header) and the other is local (attribute, appears in any number of elements, mostly as a descriptor).</li> </ul>
+        <h4>Example:</h4>
+
+			A href="Intuitive Lifestyle Brand | Home" <span style="background-color: #f17373">title</span>="Businesses with an intuitive foundation for doing business.">
+         
+<br><br>Some other optional elements included in the head tag:
+
+        <h2 style="color:#89CFF0;">LINK</h2>
+        <ul>
+        <li>Start tag: required, End tag: optional</li>
+         <li>Link element indicates a relationship between the document and some other object, such as link to style sheet.</li>
+        </ul>
+        <h4>Example:</h4>
+        link rel="stylesheet" href="styles.css"
+       
+        <h2 style="color:#89CFF0;">STYLE</h2>
+        <ul>
+          <li>Start tag: required, End tag: required.</li>
+          <li>Provides styling elements directly in the code.</li></ul>
+<h4>Example:</h4>
+			body {background-color: powderblue;}<br>
+			h1   {color: blue;}<br>
+			p    {color: red;}
+			 
+        <h2 style="color:#89CFF0;">META</h2>
+       <ul>
+          
+          <li>Start tag: optional, End tag: optional</li>
+         <li>Metadata is data (information) about the document such as character set, page description, keywords, and author of the document. and viewport settings.</li>
+         <li>Metadata will not be displayed on the page, but will be parsed by agents such as the browser (how to display content or reload page), search engines (keywords), and other web services.</li>
+         <li>Viewport is a very important function, designers take control over the viewport (the user's visible area of a web page), through the meta tag.</li>
+         <li>Hypertext Transfer Protocol (HTTP) is also managed in the meta tag.</li></ul>
+        <h4>Examples:</h4>
+
+	meta charset="UTF-8"<br>
+  meta name="description" content="Getting Started with HTML"<br>
+  meta name="keywords" content="HTML, CSS, JavaScript, DTD, Technical Document"<br>
+  meta name="author" content="Gena Hurst"<br>
+  meta name="viewport" content="width=device-width, initial-scale=1.0"<br><br>
+			
+There are many uses for the meta tag that goes beyond the scope of this document, please refer to the sources below for additional information.
+        <h2 style="color:#e4b8ec;">BODY</h2>
+<ul>
+  <li>Start tag: optional, End tag: optional</li>
+  <li>'frameset' is the legacy version of 'body'.</li>
+  <li>The body of a document contains the website content. The content may be presented by a user agent (browser) in a variety of ways: 
+		<br>1.  For visual browsers, you can think of the body as a canvas where the content appears: text, images, colors, graphics, etc.<br> 
+		2. For audio user agents, the same content may be spoken. 	</li>
+  <li>Since style sheets are now the preferred way to specify a document's presentation, the representational attributes of the body have been deprecated (archived).</li>
+  <li>All visual content that will appear on the webpage is contained in the body tags.</li></ul>
+		
+There are just too many elements and attributes to list them all here.  Some of the ones we’ve covered in the Google Web Tech Development Fellowship include but are not limited to:
+        <ul>
+          <li>hypertext (a)</li>
+         <li>header(h)</li>
+          <li>division (div)</li>
+          <li>paragraph (p)</li>
+          <li>ordered list (ol)</li>
+          <li>unordered list (ul)</li>
+          <li>list (li)</li>
+          <li>break (br)</li>
+          <li>image (img)</li></ul>
+    
+</article>
+</section>
+<section class="main-section" id="Hierarchy">                                                                                                                       <section class="main-section" id="File Structure">
+      <header>Hierarchy</header>
+      <article>
+        <p>An HTML document is like a big family tree, with parents, siblings, children, ancestors, and descendants.
+
+It comes from the ability to nest HTML elements within one another.</p> 
+<ul>
+<li>Ancestor – Represented by the <span style="background-color: #00FF00">HTML</span> tag.
+      An ancestor refers to any element that is connected but further up the document tree - no matter how many levels higher.</li></ul>
+      <img src="data:image/gif;base64,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" alt="Tree Ancestor ">
+                                                     <ul><li>Descendant – Represented by the <span style="background-color: #e4b8ec">HEAD/BODY</span> tag as a descendant of <span style="background-color: #00FF00">HTML</span>.<br>
+      A descendant refers to any element that is connected but lower down the document tree - no matter how many levels lower.</li></ul>
+      </ul>
+      <img src="data:image/gif;base64,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" alt="Tree Descendant">
+<ul><li>Parent/Child – Represented by <span style="background-color: #e4b8ec">HEAD</span> (Parent) and  <span style="background-color: #89CFF0">TITLE</span> (Child) tags.<br>A parent is an element that is directly above and connected to an element in the document tree.<br>
+      A child is an element that is directly below and connected to an element in the document tree. </li></ul>
+      <img src="data:image/gif;base64,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" alt="Tree Parent and Child">
+                                                                                                                                           <ul><li>Siblings – Represented by the <span style="background-color: #89CFF0">TITLE</span>, <span style="background-color: #89CFF0">LINK</span>, <span style="background-color: #89CFF0">STYLE</span>, and <span style="background-color: #89CFF0">META</span> tags.<br>
+     A sibling is an element that shares the same parent with another element.</li> </ul>
+     <img src="data:image/gif;base64,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" alt="Tree Parent and Child"> 
+</article>
+</section>
+  <section class="main-section" id="Closing">
+      <header>Closing</header>
+      <article>
+      <p>HTML documents all close with the ending HTML tag."
+
+        <section class="main-section" id="Sources">
+            <article> 
+                <h5><p><u>Sources:</u><br>
+            The global structure of an HTML document (w3.org)<br> 
+            
+            HTML's two most important components: Tags & Hierarchy: All about them - HT School (hindustantimes.com)<br> 
+            
+            HTML Entities (w3schools.com) <br>
+            
+            HTML 4 Document Type Definition (w3.org) <br> 
+            
+            HTML doctype declaration (w3schools.com)<br> 
+            
+            The Head Element and Related Elements (w3.org) <br>
+            
+            HTML elements reference - HTML: HyperText Markup Language | MDN (mozilla.org)<br> 
+            
+            The HTML Document Tree (simmons.edu)<br> 
+            
+            The HTML family tree: Parents, children, ancestor, descendant, siblings (linkedin.com) <br>
+            
+            HTML File Paths (w3schools.com) <br>
+            
+            HTML Hierarchy - Free tutorial to learn HTML and CSS (marksheet.io) </p></h5>
+            </article>
+        </section>
+  </body>
+  </html>

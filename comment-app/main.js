@@ -1,18 +1,16 @@
-
-
 let DB;
 
 
 let form = document.querySelector('form');
 let name1 = document.querySelector('#name1');
 let contact = document.querySelector('#contact');
-let comments = document.querySelector('#comments');              
+let comments = document.querySelector('#comments'); 
+let datetime = document.querySelector('#datetime');             
 let commentOut = document.querySelector('#consultations');
 let services = document.querySelector('#services');
 
-var today = new Date();
-  var datetime = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-  document.querySelector("datetime");
+let dt = new Date();
+let fulldate = dt.getDate() + "." + (dt.getMonth()+1) + "." + dt.getFullYear();
 
 
     
@@ -41,9 +39,8 @@ var today = new Date();
           let objectStore = db.createObjectStore('comments', { keyPath: 'key', autoIncrement: true } );
 
         
-          objectStore.createIndex('name', 'name', { unique: false } );
-          objectStore.createIndex('contact', 'contact', { unique: false } );
-          objectStore.createIndex('date', 'date', { unique: false } );
+          objectStore.createIndex('name1', 'name1', { unique: false } );
+          objectStore.createIndex('contact', 'contact', { unique: true } );
           objectStore.createIndex('comments', 'comments', { unique: false } );
           objectStore.createIndex('datetime', 'datetime', { unique: false } );
 
@@ -60,14 +57,10 @@ var today = new Date();
           let newComment = {
                name1 : name1.value,
                contact : contact.value,
-               date : date.value,
-               comments : comments.value,
-               datetime : datetime.value
-               
+               comments : comments.value, 
+               datetime : datetime = fulldate 
           }
 
-          
-          
           let transaction = DB.transaction(['comments'], 'readwrite');
           let objectStore = transaction.objectStore('comments');
 
@@ -105,12 +98,9 @@ var today = new Date();
                     CommentHTML.innerHTML = `  
                          <p class="font-weight-bold">Name:  <span class="font-weight-normal">${cursor.value.name1}<span></p>
                           <p class="font-weight-bold">Email:  <span class="font-weight-normal">${cursor.value.contact}<span></p>
-                         <p class="font-weight-bold">Date:  <span class="font-weight-normal">${cursor.value.date}<span></p>
                          <p class="font-weight-bold">Comment:    <span class="font-weight-normal">${cursor.value.comments}<span></p>
-                         
-                    `
-                    
-                    ;
+                         <p class="font-weight-bold">Posted On:  <span class="font-weight-normal">${fulldate}<span></p>  
+                    `;
 
                     
                     const cancelBtn = document.createElement('button');

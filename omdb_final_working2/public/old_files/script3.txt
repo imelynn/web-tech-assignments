@@ -1,0 +1,59 @@
+
+const movieSearchBox = document.getElementById('#form');
+const searchList = document.getElementById('search-list');
+const resultGrid = document.getElementById('result-grid');
+             
+// load movies from API
+
+let formDat = (document.querySelectorAll("#form"));
+let search = new URLSearchParams(form.data).toString();
+    
+    fetch(`https://omdbapi.com/?s=tarzan&page=1&apikey=138ff1a`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        if (data) {
+            
+            displayMovieDetails(data);
+          }
+})
+  // make sure to catch any error that occurs (just console logging in this case)
+  .catch((error) => console.log(error))
+
+ 
+function findMovies(){
+    let searchTerm = (search.value).trim();
+    if(searchTerm.length > 0){
+        searchList.classList.remove('hide-search-list');
+        loadMovies(searchTerm);
+    } else {
+        searchList.classList.add('hide-search-list');
+    }
+}
+
+function displayMovieDetails(details){
+
+    resultGrid.innerHTML = `
+    
+    <div class = "movie-poster">
+        <img src = "${(details.Poster != "N/A") ? details.Poster : "image_not_found.png"}" alt = "movie poster">
+    </div>
+    <div class = "movie-info">
+        <p class = "movie-title">Movie Title: ${details.Title}</p>
+        <ul class = "movie-misc-info">
+            <li class = "released">Year Released: ${details.Released}</li>
+            <li class = "rated">Ratings: ${details.Rated}</li>
+            
+        </ul>
+        <p class = "plot"><b>Plot:</b> ${details.Plot}</p>
+        
+        
+    </div>
+    `;
+}
+
+window.addEventListener('click', (event) => {
+    if(event.target.className != "submit"){
+        searchList.classList.add('hide-search-list');
+    }
+})

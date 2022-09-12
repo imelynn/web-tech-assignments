@@ -1,0 +1,21 @@
+{
+  "name": "omdb_project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4",
+    "vite": "^3.0.4"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "eslint": "^8.20.0",
+    "prettier": "^2.7.1",
+    "react": "^18.2.0"
+  }
+}

@@ -1,0 +1,43 @@
+import { isPostfixUnaryExpression } from "typescript";
+
+const apikey = import.meta.env.API_KEY;
+
+let getAPI = async (query) => {
+  const getapi = await fetch (`http://www.omdbapi.com/?${query}&apikey=${apikey}`);
+  const data = await getapi.json();
+  console.log(data);
+ 
+const movies = document.getElementById("moviesearch");
+
+formSearch.addEventListerner('submit', (e) => {
+  e.preventDefault();
+
+  data.append("title", document.getElementById("title").value);
+  data.append("type", document.getElementById("type").value);
+  data.append("year", document.getElementById("year").value);
+  data.append("plot", document.getElementById("plot").value);
+
+});
+
+const getPoster = document.createElement("img")
+poster.src = `Poster: ${data.Poster}`;
+
+  const getTitle = document.createElement("");
+  getTitle = `Title: ${data.Title}`;
+
+  const getType = document.createElement("");
+  getType = `Type: ${data.Type}`;
+
+  const getYear = document.createElement("");
+  getYear = `Year: ${data.Year}`;
+
+  const getPlot = document.createElement("");
+  getPlot = `Plot: ${data.Plot}`;
+
+  movies.append(poster);
+  movies.append(formTitle);
+  movies.append(formType);
+  movies.append(formYear);
+  movies.append(formPlot);
+
+}

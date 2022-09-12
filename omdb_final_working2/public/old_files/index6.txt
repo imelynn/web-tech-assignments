@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image" src="" />
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer type="module" src="./script.js"></script>
+    <title>IMDB Movie Lookup</title>
+  </head>
+  <body> 
+    <!--SECTION 1- MOVIE INPUT FORM-->
+    <section class="search-params" id="searchparams">  
+    <!--DIV MAIN CONTAINER-->
+      <div class="search-container1" id="searchcon">
+        <!--DIV HEADER CONTAINER-->
+        <div class="header-container" id="headcon"><br>
+        <h2>IDBM Movie Lookup</h2>
+        <h1>Looking for your favorite movie, show, or television episode?<br>  
+          Fill out the form to search IDBM's extensive movie database. </h1><br><br>
+          <!-- END DIV HEADER CONTAINER-->
+        </div> 
+        <!--DIV FORM CONTAINER-->
+        <div class="form-container" id="formcon">
+          <!--FORM ELEMENT-->
+          <form id="form" class="input-form" action="/" >
+            <!--DIV INPUT-FIELDS CONTAINER-->
+          <div class="input-fields" id="infields">
+          <label for="title" class="label" name="Title:"></label>
+            <input id="title" type="text" class="form-control" value="" required placeholder="Enter Title or Search Parameter"/><br>
+            <span class="error-message"></span>
+          <label for="type" class="label" name="Type:"></label>   
+            <input id="type" type="text" class="form-control" value="" placeholder="Movie, Series, or Episode?"/><br>
+            <span class="error-message"></span>
+          <label for="year" class="label" name="Year:"></label>
+            <input id="year" type="text" class="form-control" min="1928" max="2022" value="" placeholder="Year"><br>
+            <span class="error-message"></span>
+          <label for="plot" class="label"><h1>Plot:</h1></label>
+            <select id="plot" class="form-control" required placeholder="Plot.  Short or Full?">
+              <option value="Full">Full</option>
+              <option value="Short" selected>Short</option><br><br>
+            </select>
+            <span class="error-message"></span>
+            <!--BUTTON ELEMENT-->
+            <br><br><button type="submit" class = "form-control" id = "movie-search-box" onkeyup="findMovies()" onclick = "findMovies()">Search</button><br>
+            <!--END DIV INPUT-FIELDS CONTAINER-->
+            </div>
+            <!--END FORM ELEMENT-->
+            </form>
+            <!--END DIV FORM CONTAINER-->
+            </div>
+            <!--END DIV MAIN CONTAINER-->
+      </div>
+      <!--END SECTION 1- MOVIE INPUT FORM-->
+      <div class="output" id="movies"></div>
+        <div class = "wrapper">
+          <!-- logo -->
+          <div class = "logo">
+              <div class = "container">
+              </div>
+          </div>
+        <div class = "search-container">
+          <div class = "search-element">
+        <div class = "search-list" id = "search-list"></div>
+        <div class = "container">
+          <div class = "result-container">
+              <div class = "result-grid" id = "result-grid">
+              </div>
+            </div>
+        </div>
+        <!-- end of result container -->
+    </div>
+  </div>
+        </div>
+        
+      
+      <script src = "script.js"></script> 
+
+      
+     
+    </section> 
+      
+    
+  </body>
+</html>

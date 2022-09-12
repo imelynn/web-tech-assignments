@@ -1,0 +1,24 @@
+const axios = require('axios');
+
+async function doPostRequest() {
+
+    let payload = { title: '', year: '', id: '', plot: '', poster: '' };
+
+    let res = await axios.post('http://www.omdbapi.com/?apikey=138ff1a&s=tarzan', payload);
+
+    let data = res.data;
+    console.log(data);
+}
+
+doPostRequest();
+
+function displayData(data) {
+var output = document.getElementById('output');
+
+for(var i = 0; i < data.length; i++ ){
+    var div = document.createElement("div"); 
+    div.innerHTML = 'Title: ' + data[i].title + 'Year: ' + data[i].year +'imdbID: ' + data[i].id + 
+    'Plot: ' + data[i].plot + 'Poster: ' +data[i].poster;
+    output.appendChild(div);
+}
+}

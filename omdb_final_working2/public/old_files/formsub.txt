@@ -1,0 +1,26 @@
+export class FormValidator {
+    constructor(searchform, fields) {
+      this.form = searchform
+      this.fields = fields
+    }
+  
+   
+    validateOnSubmit() {
+      let self = this
+  
+      this.form.addEventListener('submit', e => {
+          e.preventDefault()
+          self.fields.forEach(field => {
+          const input = document.querySelector(`#${field}`)
+          self.validateFields(input)
+        })
+      })
+    }
+  
+  }
+  
+  const searchform = document.querySelector('.searchform')
+  const fields = ["apikey", "seach", "type", "year", "plot"]
+  
+  const validator = new FormValidator(searchform, fields)
+  validator.initialize()

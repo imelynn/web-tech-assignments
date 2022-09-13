@@ -28,7 +28,7 @@ let fulldate = dt.getDate() + "." + (dt.getMonth()+1) + "." + dt.getFullYear();
           
           DB = ScheduleDB.result;
 
-          showConsultations();
+          showComments();
      }
 
    
@@ -49,9 +49,6 @@ let fulldate = dt.getDate() + "." + (dt.getMonth()+1) + "." + dt.getFullYear();
 
      form.addEventListener('submit', addComments);
 
-     datetime = new Date();
-          document.getElementById('#datetime');
-
      function addComments(e) {
           e.preventDefault();
           let newComment = {
@@ -71,14 +68,14 @@ let fulldate = dt.getDate() + "." + (dt.getMonth()+1) + "." + dt.getFullYear();
           transaction.oncomplete = () => {
                //console.log('New schedule added');
 
-               showConsultations();
+               showComments();
           }
           transaction.onerror = () => {
               //console.log();
           }
 
      }
-     function showConsultations() {
+     function showComments() {
        
           while(commentOut.firstChild) {
             commentOut.removeChild(commentOut.firstChild);

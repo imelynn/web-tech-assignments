@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    
+    <title>IMDb Movie Lookup</title>
+    <script type="module" crossorigin src="/assets/final_omdb_check.d2997160.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill.c7c6310f.js">
+    <link rel="stylesheet" href="/assets/index.688e0427.css">
+  </head>
+<body>
+    
+    <div id="app" class = "wrapper">
+        <div class = "logo">
+        <div class = "search-container">
+          <!--this div holds the gena movie corner image & searchbox-->
+            <div class = "search-element">
+              <!-- this div is searchbox-->
+                <input type = "text" class = "form-control" placeholder="Search" id = "movie-search-box" onkeyup="findMovies()" onclick = "findMovies()">
+
+                <div class = "search-list" id = "search-list">
+                  <!-- this holds the searchterm list-->
+                </div>
+            </div>
+          </div>
+              
+                <template id="favlist"></template>
+                </div>
+              </div>    
+              <div id="resultholder" class="resultholder">
+                <!--this div holds movie display, favorite buttons, comment element-->
+                <div class="testdiv" id="testdiv">
+                  <button class="addfavorites" id="addfavorites" onclick="addFavorites()">Add to Favorites</button>
+                  <button class="removefavorites" id="removefavorites" onclick="removeFavorites()">Remove from Favorites</button><br><br>
+                  <p style="color:red; font-size: 15px;" >User Comments:</p><br>
+                  <form id="com-fav">
+                      <label style="color: red;">Name:</label>
+                      <input type="text" id="name" class="name" name="name"><br><br>
+                      <textarea class ="comment" id="comment" rows="2" cols="30" placeholder="Enter Your Comment!"></textarea><br>
+                      <button class="subcom" id="subcom" onclick="createComment()">Submit Comment</button>
+              </form>
+              <script>
+                const createComment = () => {
+        var userName = document.getElementById("name").value;
+        var userComment = document.getElementById("comment").value;
+    
+        var results = document.querySelector("#comsection");
+
+        results.append(`Name: ${userName}`);
+        results.append(`Comment: ${userComment}`);
+    };
+              </script>
+              <!--<script>
+                document.getElementById("name").onclick = function(){
+                  var name = prompt("Enter your name");
+                  document.getElementById("comsection").innerText = name;
+                }
+                
+                document.getElementById("comment").onclick = function(){
+                  var city = prompt("Enter your comment");
+                  document.getElementById("comsection2").innerText = city;
+                }
+                </script><!-->
+              <div id="comsection" class="comsection">
+                <br>
+              </div>
+              <div id="comsection2" class="comsection2"></div>
+                </div>
+                <div class = "result-grid" id = "result-grid">
+                
+                  </div>
+                
+              </div>
+    <script src = "./script.js"></script>
+</body>
+</html>

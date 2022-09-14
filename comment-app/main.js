@@ -4,45 +4,51 @@ let DB;
 let form = document.querySelector('form');
 let name1 = document.querySelector('#name1');
 let contact = document.querySelector('#contact');
-let comments = document.querySelector('#comments'); 
-let datetime = document.querySelector('#datetime');             
+let datetime = document.querySelector('#datetime');
+let comments = document.querySelector('#comments');      
 let commentOut = document.querySelector('#consultations');
 let services = document.querySelector('#services');
+let favlist = document.querySelector('#fav-list');
+let favHeader = document.querySelector('#fav-header');
 
 let dt = new Date();
 let fulldate = dt.getDate() + "." + (dt.getMonth()+1) + "." + dt.getFullYear();
-
-
     
      // create the database
-     let ScheduleDB = window.indexedDB.open('comments', 1);
+     let CommentDB = window.indexedDB.open('comments', 1);
 
      // if there's an error
-     ScheduleDB.onerror = function() {
+     CommentDB.onerror = function() {
           console.log('error');
      }
      // if everything is fine, assign the result is to the (letDB) instance 
-     ScheduleDB.onsuccess = function() {
+     CommentDB.onsuccess = function() {
           // console.log('Database Ready');
 
           
-          DB = ScheduleDB.result;
+          DB = CommentDB.result;
 
           showComments();
      }
 
    
-     ScheduleDB.onupgradeneeded = function(e) {
+     CommentDB.onupgradeneeded = function(e) {
           
           let db = e.target.result;
           
           let objectStore = db.createObjectStore('comments', { keyPath: 'key', autoIncrement: true } );
+          let favoriteStore = db.createObjectStore('favorites', { keyPath: 'key', autoIncrement: true } );
 
         
           objectStore.createIndex('name1', 'name1', { unique: false } );
           objectStore.createIndex('contact', 'contact', { unique: true } );
           objectStore.createIndex('comments', 'comments', { unique: false } );
           objectStore.createIndex('datetime', 'datetime', { unique: false } );
+
+          favoriteStore.createIndex('name1', 'name1', { unique: false } );
+          favoriteStore.createIndex('contact', 'contact', { unique: true } );
+          favoriteStore.createIndex('comments', 'comments', { unique: false } );
+          favoriteStore.createIndex('datetime', 'datetime', { unique: false } );
 
           //console.log('Database ready and fields created!');
      }
@@ -54,10 +60,10 @@ let fulldate = dt.getDate() + "." + (dt.getMonth()+1) + "." + dt.getFullYear();
           let newComment = {
                name1 : name1.value,
                contact : contact.value,
-               comments : comments.value, 
-               datetime : datetime = fulldate 
+               comments : comments.value,
+               datetime : datetime = fulldate        
           }
-
+          
           let transaction = DB.transaction(['comments'], 'readwrite');
           let objectStore = transaction.objectStore('comments');
 
@@ -96,60 +102,165 @@ let fulldate = dt.getDate() + "." + (dt.getMonth()+1) + "." + dt.getFullYear();
                          <p class="font-weight-bold">Name:  <span class="font-weight-normal">${cursor.value.name1}<span></p>
                           <p class="font-weight-bold">Email:  <span class="font-weight-normal">${cursor.value.contact}<span></p>
                          <p class="font-weight-bold">Comment:    <span class="font-weight-normal">${cursor.value.comments}<span></p>
-                         <p class="font-weight-bold">Posted On:  <span class="font-weight-normal">${fulldate}<span></p>  
+                         <p class="font-weight-bold">Posted On:  <span class="font-weight-normal">${fulldate}<span></p>
                     `;
 
                     
                     const cancelBtn = document.createElement('button');
-                    cancelBtn.classList.add('btn', 'btn-danger');
+                    cancelBtn.classList.add('btn1', 'btn-danger1');
+                    cancelBtn.setAttribute('id', 'btn-delete')
                     cancelBtn.innerHTML = 'Delete';
                     cancelBtn.onclick = removeComment;
+
+                    const favBtn = document.createElement('button');
+                    favBtn.classList.add('btn2', 'fav-add');
+                    favBtn.setAttribute('id', 'fav-btn');
+                    favBtn.innerHTML = 'Favorite';
+                    favBtn.onclick = addFavorites;
                
                  
                     CommentHTML.appendChild(cancelBtn);
-                 commentOut.appendChild(CommentHTML);
+                    CommentHTML.appendChild(favBtn);
+                    commentOut.appendChild(CommentHTML);
 
                     cursor.continue();
                } else {
                     if(!commentOut.firstChild) {
-                        services.textContent = 'Your Comment';
-                         let noSchedule = document.createElement('p');
-                         noSchedule.classList.add('text-center');
-                         noSchedule.textContent = 'No results Found';
-                      commentOut.appendChild(noSchedule);
+                        services.textContent = 'Posted Comments';
+                         let noComment = document.createElement('p');
+                         noComment.classList.add('text-center');
+                         noComment.textContent = 'No results Found.  Add a comment left.';
+                      commentOut.appendChild(noComment);
                     } else {
                         services.textContent = 'Posted Comments'
                     }
                }
           }
      }
+          
+     function addFavorites(e) {
+          e.preventDefault();
+          let newFavorite = {
+               name1 : name1.value,
+               contact : contact.value,
+               comments : comments.value,
+               datetime : datetime = fulldate        
+          }
+          
+          let transaction = DB.transaction(['favorites'], 'readwrite');
+          let favoriteStore = transaction.objectStore('favorites');
 
-          function removeComment(e) {
+          let request = favoriteStore.add(newFavorite);
+                    request.onsuccess = () => {
+
+          }
+          transaction.oncomplete = () => {
+               //console.log('New schedule added');
+
+             
+          }
+          transaction.onerror = () => {
+              //console.log();
+          }
+
+     }
+
+     function showFavorites() {
        
-          let scheduleID = Number( e.target.parentElement.getAttribute('data-comment-id') );
+          while(favHeader.firstChild) {
+            favHeader.removeChild(favHeader.firstChild);
+          }
+         
+          let favoriteStore = DB.transaction('favorites').objectStore('favorites');
+
+          favoriteStore.openCursor().onsuccess = function(e) {
+               
+               let cursor = e.target.result;
+               if(cursor) {
+                    let FavoriteHTML = document.createElement('li');
+                    FavoriteHTML.setAttribute('data-favorite-id', cursor.value.key);
+                    FavoriteHTML.classList.add('list-favorite-item');
+                    
+                 
+                    FavoriteHTML.innerHTML = `  
+                         <p class="font-weight-bold">Name:  <span class="font-weight-normal">${cursor.value.name1}<span></p>
+                          <p class="font-weight-bold">Email:  <span class="font-weight-normal">${cursor.value.contact}<span></p>
+                         <p class="font-weight-bold">Comment:    <span class="font-weight-normal">${cursor.value.comments}<span></p>
+                         <p class="font-weight-bold">Posted On:  <span class="font-weight-normal">${fulldate}<span></p>
+                    `;
+
+                    cursor.continue();
+               } else {
+                    if(!favlist.firstChild) {
+                        favlist.textContent = 'No Favorites Found'; 
+                         let noFavs = document.createElement('p');
+                         noFavs.classList.add('fav-center');
+                         noFavs.textContent = 'Click the button above to display favorites.';
+                      commentOut.appendChild(noFavs);
+                    } else {
+                        favHeader.textContent = 'Favorites'
+                    }
+               }
+          }
+     }
+     
+     
+     function removeComment(e) {
+       
+          let CommentID = Number( e.target.parentElement.getAttribute('data-comment-id') );
          
           let transaction = DB.transaction(['comments'], 'readwrite');
           let objectStore = transaction.objectStore('comments');
          
-          objectStore.delete(scheduleID);
+          objectStore.delete(CommentID);
 
           transaction.oncomplete = () => {
              
                e.target.parentElement.parentElement.removeChild( e.target.parentElement );
 
-               if(!commentOut.firstChild) {
+               if(!comments.firstChild) {
                    
-                    services.textContent = 'Enter a Comment';
+                    services.textContent = 'Posted Comments';
                    
-                   let noSchedule = document.createElement('p');
+                   let noComment = document.createElement('p');
                   
-                   noSchedule.classList.add('text-center');
+                   noComment.classList.add('text-center');
                    
-                   noSchedule.textContent = 'No results Found';
+                   noComment.textContent = 'No results Found';
                 
-                    comments.appendChild(noSchedule);
+                    comments.appendChild(noComment);
                } else {
-                   services.textContent = 'Posted Comments'
+                   services.textContent = 'Comment deleted.'
+               }
+          }
+     }
+
+     function removeFavorite(e) {
+       
+          let FavoriteID = Number( e.target.parentElement.getAttribute('data-favorite-id') );
+         
+          let transaction = DB.transaction(['comments'], 'readwrite');
+          let objectStore = transaction.objectStore('favorites');
+         
+          objectStore.delete(FavoriteID);
+
+          transaction.oncomplete = () => {
+             
+               e.target.parentElement.parentElement.removeChild( e.target.parentElement );
+
+               if(!comments.firstChild) {
+                   
+                  services.textContent = 'Favorites';
+                   
+                   let noComment = document.createElement('p');
+                  
+                   noComment.classList.add('text-center');
+                   
+                   noComment.textContent = 'No results Found';
+                
+                    comments.appendChild(noComment);
+               } else {
+                   services.textContent = 'Comment removed from favorites.'
                }
           }
      }

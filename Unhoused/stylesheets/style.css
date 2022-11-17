@@ -1,0 +1,104 @@
+body {
+    text-align: center;
+    }
+#header-rec1{
+    width: auto;
+    height: 40px;
+    background-color: green;
+    background-size:cover;
+    background-repeat: no-repeat;
+    margin-left: -20px;
+    margin-top: -10px;
+}
+#header-rec2{
+  width: auto;
+  height: 20px;
+  background-color: red;
+  background-size:cover;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+  margin-left: -20px;
+}
+img{
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}
+#header-bar{
+    display: flex;
+}
+#h2-enterzip{
+    margin-left: 350px;
+}
+#selectHeader{
+  margin-left: 350px;
+}
+#selectlist{
+  margin-left: 350px;
+}
+#sendzip{
+  margin-left: 350px;
+}
+#zipCodeShelter{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 350px;
+}
+/* Style the navigation menu */
+.topnav {
+    overflow: hidden;
+    position: relative;
+    margin-left: 250px;
+  }
+  
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  /* Style navigation menu links */
+  .topnav a {
+    color: blue;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+  }
+  
+  /* Style the hamburger menu */
+  .topnav a.icon {
+    display:inline;
+    position:absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  /* Add a grey background color on mouse-over */
+  .topnav a:hover {
+    color: green;
+  }
+  
+  /* Style the active link (or home/logo) */
+  .active {
+    color: lawngreen;
+  }
+
+#disResults{
+  display: flex;
+  width: auto;
+  height: auto;
+}
+
+#sheResults{
+background-color: red;
+width: 750px;
+height: 100px;
+margin-top: 20px;
+}
+#sheDisplay{
+  background-color: green;
+  width: 750px;
+  height: 100px;
+  margin-top: 20px;
+}
+ 

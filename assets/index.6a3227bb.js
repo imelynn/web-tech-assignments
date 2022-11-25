@@ -1,1 +1,0 @@
-import"./modulepreload-polyfill.c7c6310f.js";window.addEventListener("load",()=>{navigator.serviceWorker.register("/servwork.js").then(e=>console.log("Registered service worker")).catch(e=>console.log("Error registering: ",e))});

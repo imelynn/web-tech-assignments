@@ -20,7 +20,10 @@ var cacheFiles = [
 	'/images/divine_femeny2.svg',
 	'/images/webpageheader4.png',
 	'/images/headshot.png',
-	'/manifest.json'
+	'/manifest.json',
+	'/images/feta_circle.png',
+	'/images/feta_lady.png',
+	'/images/feta_square.png',
 
 
 ]

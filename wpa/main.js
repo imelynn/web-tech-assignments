@@ -7,7 +7,7 @@
 
 window.addEventListener('load', () => {
     navigator.serviceWorker
-    .register('/servwork.js')
+    .register('/public/servwork.js')
     .then(_ => console.log('Registered service worker'))
     .catch(e => console.log('Error registering: ',e));
   });

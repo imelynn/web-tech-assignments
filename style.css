@@ -5,6 +5,14 @@ body {
     padding: 0 0;
     clear:both;
 }
+body > header {
+    position: fixed;
+    top: 0;
+  }
+  body > footer {
+    position: fixed;
+    bottom: 0;
+  }
 #wrapper{
     position:relative;
     min-height: 100vh;
@@ -138,3 +146,201 @@ a:link {
     color: purple;
     padding-top: 10px;
 }
+
+@media screen and (min-width:360px) and (max-width:800px) {
+    body {
+        background-color: #CF9FFF;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 0;
+        clear:both;
+    }
+    body > header {
+        position: fixed;
+        top: 0;
+      }
+      body > footer {
+        position: fixed;
+        bottom: 0;
+      }
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+
+}
+@media screen and (min-width:375px) and (max-width:667px) {
+    body {
+        background-color: #CF9FFF;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 0;
+        clear:both;
+    }
+    body > header {
+        position: fixed;
+        top: 0;
+      }
+      body > footer {
+        position: fixed;
+        bottom: 0;
+      }
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+
+}
+@media screen and (min-width:390px) and (max-width:844px) {
+    body {
+        background-color: #CF9FFF;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 0;
+        clear:both;
+    }
+    body > header {
+        position: fixed;
+        top: 0;
+      }
+      body > footer {
+        position: fixed;
+        bottom: 0;
+      }
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+
+}
+@media screen and (min-width:412px) and (max-width:950px) {
+    body {
+        background-color: #CF9FFF;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 0;
+        clear:both;
+    }
+    body > header {
+        position: fixed;
+        top: 0;
+      }
+      body > footer {
+        position: fixed;
+        bottom: 0;
+      }
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+
+}
+@media only screen and (min-width:500px) and (max-width:500px) {
+    body {
+        background-color: #CF9FFF;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 0;
+        clear:both;
+    }
+    body > header {
+        position: fixed;
+        top: 0;
+      }
+      body > footer {
+        position: fixed;
+        bottom: 0;
+      }
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+    }  
+    @media only screen and (min-width:360px) and (max-width:800px) {
+        body {
+            background-color: #CF9FFF;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 0;
+            clear:both;
+        }
+        body > header {
+            position: fixed;
+            top: 0;
+          }
+          body > footer {
+            position: fixed;
+            bottom: 0;
+          }
+          .topnav a {
+            float: none;
+            width: 100%;
+          }
+    
+    }
+    @media only screen and (min-width:375px) and (max-width:667px) {
+        body {
+            background-color: #CF9FFF;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 0;
+            clear:both;
+        }
+        body > header {
+            position: fixed;
+            top: 0;
+          }
+          body > footer {
+            position: fixed;
+            bottom: 0;
+          }
+          .topnav a {
+            float: none;
+            width: 100%;
+          }
+    
+    }
+    @media only screen and (min-width:390px) and (max-width:844px) {
+        body {
+            background-color: #CF9FFF;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 0;
+            clear:both;
+        }
+        body > header {
+            position: fixed;
+            top: 0;
+          }
+          body > footer {
+            position: fixed;
+            bottom: 0;
+          }
+          .topnav a {
+            float: none;
+            width: 100%;
+          }
+    
+    }
+    @media only screen and (min-width:412px) and (max-width:950px) {
+        body {
+            background-color: #CF9FFF;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 0;
+            clear:both;
+        }
+        body > header {
+            position: fixed;
+            top: 0;
+          }
+          body > footer {
+            position: fixed;
+            bottom: 0;
+          }
+          .topnav a {
+            float: none;
+            width: 100%;
+          }
+    
+    }

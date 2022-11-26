@@ -1,7 +1,0 @@
-# anywhere in .gitignore
-node_modules
-apiholder.js
-scriptholder.js
-.env
-obsolete_code
-

@@ -1,20 +1,13 @@
 body {
     background-color: #CF9FFF;
-    max-width: 100%;
+    max-width: 100vmax;
     margin: 0 auto;
     padding: 0 0;
     clear:both;
 }
-body > header {
-    position: fixed;
-    top: 0;
-  }
-  body > footer {
-    position: fixed;
-    bottom: 0;
-  }
 #wrapper{
-    position:relative;
+    max-width: 100vmax;
+    position:fixed;
     min-height: 100vh;
 }
 a:link {
@@ -35,16 +28,19 @@ a:link {
   }
 #header {
     background: url('./wpa/images/webpageheader4.png');
-    width: 100%;
+    background-size: 100% 100%; 
+    position:sticky;
+    max-width: 100vmax;
     height: 250px;
     margin-top: -50;
     font-size: 100px;
     color: white;
     text-align: center;
+    
 }
 #header2 {
     background: url('./wpa/images/webpageheader4.png');
-    width: 100%;
+    max-width: 100vmax;
     height: 250px;
     margin-top: -50;
     font-size: 70px;
@@ -54,7 +50,7 @@ a:link {
 }
 #header3 {
     background: url('./wpa/images/webpageheader4.png');
-    width: 100%;
+    max-width: 100vmax;
     height: 250px;
     margin-top: -50;
     font-size: 70px;
@@ -63,6 +59,7 @@ a:link {
     padding-top: 3%;
 }
 #navigation{
+    max-width: 100vmax;
     padding-left: 250px;
     column-count: 3;
     column-gap: 10px;
@@ -72,29 +69,28 @@ a:link {
     padding-top: 10px;
 }
 #content{
-    display: flex;
+    max-width: 100vmax;
+    display:inline-flex;
     height: 1000px;
 }
 #content2{
+    max-width: 100vmax;
     display: flex;
     height: 1200px;
 }
 #content3{
+    max-width: 100vmax;
     display: flex;
     height: 1000px;
 }
 #leftside{
     position:relative;
-    width:55%;
+    max-width: 100vmax;
     padding:10px;
     padding-top: 100px;
     margin-left: 30px;
 }
-#fetaimg{
-    padding-left: 50px;
-    padding-top: 100px;
-    ;
-    }
+
 #leftfeta{
     position:relative;
     width:20%;
@@ -113,7 +109,7 @@ a:link {
     position:relative;
     width:45%;
     padding:10px;
-    padding-top: 120PX;
+    margin-top: 120PX;
 }
 #mainfeta{
     display: grid;
@@ -130,108 +126,59 @@ a:link {
 }
 #maincontact{
     position:relative;
-    width:45%;
+    max-width: 100vmax;
     padding-left: 200px;
     padding-top: 120PX;
     align-items: center;
 }
 #footer{
     background-color: whitesmoke;
-    width: 100%;
-    position:inherit;
+    max-width: 100vmax;
     left: 0;
     bottom: 0;
-    height: 50px;
+    height: 30px;
     font-size: 20px;
     color: purple;
-    padding-top: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%; 
 }
 
 @media screen and (min-width:320px) and (max-width:480px) {
     body {
         background-color: #CF9FFF;
-        max-width: 100%;
+        max-width: 100vmax;
         margin: 0 auto;
         padding: 0 0;
         clear:both;
     }
-    body > header {
-        position: fixed;
-        top: 0;
-      }
-      body > footer {
-        position: fixed;
-        bottom: 0;
-      }
-      .topnav a {
-        float: none;
-        width: 100%;
-      }
-
-}
+   }
 @media screen and (min-width:481px) and (max-width:768px) {
     body {
         background-color: #CF9FFF;
-        max-width: 100%;
+        max-width: 100vmax;
         margin: 0 auto;
         padding: 0 0;
         clear:both;
     }
-    body > header {
-        position: fixed;
-        top: 0;
-      }
-      body > footer {
-        position: fixed;
-        bottom: 0;
-      }
-      .topnav a {
-        float: none;
-        width: 100%;
-      }
 
 }
 @media screen and (min-width:769px) and (max-width:1024px) {
     body {
         background-color: #CF9FFF;
-        max-width: 100%;
+        max-width: 100vmax;
         margin: 0 auto;
         padding: 0 0;
         clear:both;
     }
-    body > header {
-        position: fixed;
-        top: 0;
-      }
-      body > footer {
-        position: fixed;
-        bottom: 0;
-      }
-      .topnav a {
-        float: none;
-        width: 100%;
-      }
-
+  
 }
 @media screen and (min-width:1025px) {
     body {
         background-color: #CF9FFF;
-        max-width: 100%;
+        max-width: 100vmax;
         margin: 0 auto;
         padding: 0 0;
         clear:both;
-    }
-    body > header {
-        position: fixed;
-        top: 0;
-      }
-      body > footer {
-        position: fixed;
-        bottom: 0;
-      }
-      .topnav a {
-        float: none;
-        width: 100%;
-      }
-
+  }
 }

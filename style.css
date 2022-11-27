@@ -31,6 +31,7 @@ a:link {
     background-size: 100% auto; 
     background-repeat: no-repeat;
     max-width: 100vmax;
+    height: auto;
     margin-top: -50;
     font-size: 50px;
     color: white;
@@ -44,6 +45,7 @@ a:link {
   background-size: 100% auto; 
   background-repeat: no-repeat;
   max-width: 100vmax;
+  height: auto;
   margin-top: -50;
   font-size: 50px;
   color: white;
@@ -56,6 +58,7 @@ a:link {
   background-size: 100% auto; 
   background-repeat: no-repeat;
   max-width: 100vmax;
+  height: auto;
   margin-top: -50;
   font-size: 50px;
   color: white;
@@ -68,6 +71,7 @@ a:link {
     background-size: 100% auto; 
     background-repeat: no-repeat;
     max-width: 100vmax;
+    height: auto;
     margin-top: -50;
     font-size: 50px;
     color: white;
@@ -141,11 +145,13 @@ a:link {
     margin-top: 120PX;
 }
 #mainfeta{
+    position:relative;
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: auto auto auto;
-    grid-gap: 10px;
+    padding-right: 10px;
     max-width: 100vmax;
+    width: auto;
     height: auto;
     padding-left: 10%;
     padding-top: 2%;
@@ -158,6 +164,7 @@ a:link {
         display: block; 
         float: none; 
         width: 100%;
+        padding-left: 25%;
     }
 }
 #fetawork{

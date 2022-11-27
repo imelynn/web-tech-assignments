@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill.c7c6310f.js";"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js",{scope:"./"}).then(function(e){console.log("Service Worker Registered, registration")}).catch(function(e){console.log("Service Worker Failed to Register",e)});

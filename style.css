@@ -78,12 +78,11 @@ a:link {
     display:inline-flex;
     height: 1000px;
 }
-#content2{
+#content2-NOTUSING{
     max-width: 100vmax;
-    display: flex;
-    height: 1200px;
+    height: auto;
 }
-#content3{
+#content3-NOTUSING{
     max-width: 100vmax;
     display: flex;
     height: 1000px;
@@ -103,13 +102,24 @@ a:link {
     min-height: 100vh;
     display:flexbox;
     text-align: center;
+    padding-top: 2%;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 #leftcontact{
-    position:relative;
-    width:20%;
-    padding:10px;
-    margin-left: 0%;
-    padding-top: 80PX;
+    background-color: orange;
+    width: 1200px;
+    max-width: 100vmax;
+    min-height: 100vh;
+    margin-left: 50%;
+}
+#contactInfo{
+    width: auto;
+    max-width: 100vmax;
+    min-height: 100vh;
+    padding-top: 2%;
+    text-align: center;
+    padding-bottom: 5%;
 }
 
 #main{
@@ -123,15 +133,14 @@ a:link {
     grid-template-rows: auto auto auto;
     grid-template-columns: auto auto auto;
     grid-gap: 10px;
-    position:relative;
-    width:80%;
-    padding-top: 50px;
-    padding-left: 175px;
+    max-width: 100vmax;
+    height: auto;
+    
 }
 #fetawork{
     border: 5px solid #555;
 }
-#maincontact{
+#maincontact-NOTUSING{
     position:relative;
     max-width: 100vmax;
     padding-left: 200px;

@@ -147,7 +147,18 @@ a:link {
     grid-gap: 10px;
     max-width: 100vmax;
     height: auto;
-    
+    padding-left: 10%;
+    padding-top: 2%;
+       
+}
+@media all and (max-width:800px) 
+{
+    #mainfeta
+    {
+        display: block; 
+        float: none; 
+        width: 100%;
+    }
 }
 #fetawork{
     border: 5px solid #555;

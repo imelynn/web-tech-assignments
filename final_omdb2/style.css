@@ -14,6 +14,7 @@
 }
 body{
     font-family: 'Inter', sans-serif;
+    background-color: #171717;
 }
 a{
     text-decoration: none;
@@ -158,9 +159,11 @@ img{
 
 .hide-search-list{
     display: none;
+    
 }
 
 .result-container{
+    color: #171717;
     padding: 3rem 0;
     display: flex;
 }
@@ -294,6 +297,7 @@ img{
     }
     .resultholder{
         display: flex;
+        background-color: #171717;
     }
     .result-grid{
         background-color: #171717;

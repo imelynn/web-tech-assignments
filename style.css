@@ -9,6 +9,7 @@ body {
     max-width: 100vmax;
     min-height: 100vh;
     display: block;
+    
 }
 a:link {
     color: purple;
@@ -87,12 +88,14 @@ a:link {
   column-count: 4;
   height: 50px;
   font-size: larger;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 #content{
     max-width: 100vmax;
+    min-height: 100vh;
     display:inline-flex;
-    height: 1000px;
+    height: auto;
+    
 }
 #content2-NOTUSING{
     max-width: 100vmax;
@@ -116,11 +119,22 @@ a:link {
     width: auto;
     max-width: 100vmax;
     min-height: 100vh;
-    display:flexbox;
-    text-align: center;
     padding-top: 2%;
     padding-left: 8%;
     padding-right: 8%;
+    padding-bottom: 5%;
+}
+#mainfeta{
+    position:relative;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
+    max-width: 100vmax;
+    min-height: 100vh;
+    padding-top: 2%;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-bottom: 5%;       
 }
 #leftcontact{
     background-color: orange;
@@ -140,23 +154,14 @@ a:link {
 
 #main{
     position:relative;
+    max-width: 100vmax;
+    min-height: 100vh;
     width:100%;
+    height: auto;
     padding:10px;
     margin-top: 120PX;
 }
-#mainfeta{
-    position:relative;
-    display: grid;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: auto auto auto;
-    padding-right: 10px;
-    max-width: 100vmax;
-    width: auto;
-    height: auto;
-    padding-left: 10%;
-    padding-top: 2%;
-       
-}
+
 @media all and (max-width:800px) 
 {
     #mainfeta

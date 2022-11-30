@@ -1,8 +1,9 @@
 body{
     background-image: url(/images/unhoused_back_blank.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: auto;
+    max-width: 100vmax;
+    margin: 0 auto;
+    padding: 0 0;
+    clear:both;
    }
    
 /*CSS for main html elements*/

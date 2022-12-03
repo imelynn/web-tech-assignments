@@ -1,0 +1,110 @@
+body{
+    background-image: url(images/yebackground3.png);
+    text-align: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+img{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 250px;
+    height: 250px;
+}
+h4{
+    margin-top: 0;
+    color: crimson;
+    font-size:80px;
+    font-weight: bold;
+}
+h3{
+    background-color: red;
+    font-size:10px;
+    font-weight: bold; 
+}
+li{
+    align-items: left;
+}
+#allthree{
+    float: left;
+    height: auto;
+    }
+
+#objectholder1{
+    float: left;
+    background-color: aquamarine;
+    width: 350px;
+    height: 600px;
+    border: crimson;
+    border-style: solid;
+    border-width:  10px;
+    }
+#objectholder2{
+        float: left;
+        margin-left: 50px;
+        background-color: aquamarine;
+        width: 350px;
+        height: 600px;
+        border: crimson;
+        border-style: solid;
+        border-width:  10px;
+        }
+#objectholder3{
+            float: right;
+            margin-left: 50px;
+            background-color: aquamarine;
+            width: 350px;
+            height: 600px;
+            border: crimson;
+            border-style: solid;
+            border-width:  10px;
+            }
+#yemusic{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    
+    }
+#yedrink{
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    
+}
+#yequote{
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+    
+}
+#namegrid{ 
+    width: 300px;
+    height: 50px;
+    font-size:20px;
+    font-weight: bold;
+}
+#tablegrid{
+    background-color: aquamarine;
+    width: 300px;
+    height: 300px;
+    border: purple;
+    padding-left: 20px;
+}
+#quote{
+    padding-top: 50px;
+}
+#tableholder{
+    background-color: red;
+    width: 500px;
+    height: 300px;
+    border: purple;
+}
+table,
+td {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}

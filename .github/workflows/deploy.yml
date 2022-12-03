@@ -1,12 +1,13 @@
-name: Deploy
+name: Build and Deploy
 on:
   push:
     branches:
       - main
+      - gh-pages
 permissions:
   contents: write
 jobs:
-  deploy:
+  build-and-deploy:
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     steps:
